@@ -46,7 +46,7 @@ const Leaderboard: React.FC = () => {
 
   return (
     <div className="leaderboard-container">
-      <h2>Manifest Event Leaderboard</h2>
+      <h2>\mani-fest/ Leaderboard</h2>
       {error ? (
         <p>Error fetching data: {error}</p>
       ) : (
@@ -78,6 +78,10 @@ const Leaderboard: React.FC = () => {
           padding: 20px;
           border-radius: 10px;
           box-shadow: 0 0 10px #00f7ff; /* Neon glow effect */
+          transform: rotate(-90deg); /* Rotating the container */
+          transform-origin: left top;
+          width: 100vh; /* Adjusting the width after rotation */
+          height: 100vw; /* Adjusting the height after rotation */
         }
 
         h2 {
