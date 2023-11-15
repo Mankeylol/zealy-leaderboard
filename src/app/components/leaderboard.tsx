@@ -47,7 +47,13 @@ const Leaderboard: React.FC = () => {
   return (
     <div className="leaderboard-outer-container">
       <div className="leaderboard-container">
-        <img src="assets/manifest-logo.png" alt="" className="manifest-logo" />
+        <div className="logo-container">
+          <img
+            src="assets/manifest-logo.png"
+            alt="Manifest Logo"
+            className="logo"
+          />
+        </div>
         <br />
         <h2>Leaderboard</h2>
         {error ? (
@@ -125,8 +131,17 @@ const Leaderboard: React.FC = () => {
           background-color: #181818; /* Alternating row colors */
         }
 
-        .manifest-logo {
-          max-width: 320px;
+        .logo-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+        }
+
+        .logo {
+          width: 320px;
+          height: auto;
+          margin-bottom: 20px;
         }
       `}</style>
     </div>
