@@ -44,18 +44,26 @@ const Leaderboard: React.FC = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const getRowStyle = (index: number) => {
+    switch (index) {
+      case 0:
+        return "first-place";
+      case 1:
+        return "second-place";
+      case 2:
+        return "third-place";
+      default:
+        return "";
+    }
+  };
+
   return (
     <div className="leaderboard-outer-container">
       <div className="leaderboard-container">
         <div className="logo-container">
-          <img
-            src="assets/manifest-logo.png"
-            alt="Manifest Logo"
-            className="logo"
-          />
+          <img src="/manifest-logo.png" alt="Manifest Logo" className="logo" />
         </div>
-        <br />
-        <h2>Leaderboard</h2>
+        <h2>Manifest Event Leaderboard</h2>
         {error ? (
           <p>Error fetching data: {error}</p>
         ) : (
@@ -67,8 +75,8 @@ const Leaderboard: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {data.map((item) => (
-                <tr key={item.userId}>
+              {data.map((item, index) => (
+                <tr key={item.userId} className={getRowStyle(index)}>
                   <td>{item.name}</td>
                   <td>{item.xp}</td>
                 </tr>
@@ -131,6 +139,21 @@ const Leaderboard: React.FC = () => {
 
         .leaderboard-table tr:nth-child(even) {
           background-color: #181818; /* Alternating row colors */
+        }
+
+        .first-place {
+          background-color: gold;
+          color: black;
+        }
+
+        .second-place {
+          background-color: silver;
+          color: black;
+        }
+
+        .third-place {
+          background-color: #cd7f32; /* Bronze */
+          color: black;
         }
 
         .logo-container {
