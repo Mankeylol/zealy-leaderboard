@@ -85,13 +85,16 @@ const Leaderboard: React.FC = () => {
           transform-origin: top left;
           position: relative;
           top: 100vh;
-          width: 100vh;
-          height: 100vw;
+          width: 92vh;
+          height: 92vw;
           color: #00f7ff; /* Neon color */
           background-color: #111; /* Dark background */
           padding: 20px;
           border-radius: 10px;
           box-shadow: 0 0 10px #00f7ff; /* Neon glow effect */
+          margin-top: -5vh;
+          margin-left: 2vw;
+          padding: 40px;
         }
 
         h2 {
