@@ -1,6 +1,6 @@
 // src/components/Leaderboard.tsx
-'use client'
-import React, { useState, useEffect } from 'react';
+"use client";
+import React, { useState, useEffect } from "react";
 
 interface LeaderboardItem {
   userId: string;
@@ -23,12 +23,12 @@ const Leaderboard: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://zealy-api.vercel.app/');
+      const response = await fetch("https://zealy-api.vercel.app/");
       const result = await response.json();
       setData(result.leaderboard);
     } catch (error) {
-      console.error('Error fetching data:', error);
-      setError((error as Error).message || 'An unknown error occurred.');
+      console.error("Error fetching data:", error);
+      setError((error as Error).message || "An unknown error occurred.");
     }
   };
 
@@ -45,36 +45,65 @@ const Leaderboard: React.FC = () => {
   }, []);
 
   return (
-    <div className="center-container">
-      <div className="rotate-container">
-        <h2 className="mb-4">Leaderboard</h2>
-        {error ? (
-          <p>Error fetching data: {error}</p>
-        ) : (
-          <ul className="flex flex-col">
+    <div className="leaderboard-container">
+      <h2>Manifest Event Leaderboard</h2>
+      {error ? (
+        <p>Error fetching data: {error}</p>
+      ) : (
+        <table className="leaderboard-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>XP</th>
+            </tr>
+          </thead>
+          <tbody>
             {data.map((item) => (
-              <li key={item.userId} className="mb-2">
-                {item.name} - XP: {item.xp}
-              </li>
+              <tr key={item.userId}>
+                <td>{item.name}</td>
+                <td>{item.xp}</td>
+              </tr>
             ))}
-          </ul>
-        )}
-      </div>
-      <style jsx>{`
-        .center-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-        }
+          </tbody>
+        </table>
+      )}
 
-        .rotate-container {
+      <style jsx>{`
+        .leaderboard-container {
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
-          white-space: nowrap;
-          transform: rotate(-90deg);
-          transform-origin: left top;
+          align-items: center;
+          color: #00f7ff; /* Neon color */
+          background-color: #111; /* Dark background */
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px #00f7ff; /* Neon glow effect */
+        }
+
+        h2 {
+          text-align: center;
+          font-size: 2em;
+          margin-bottom: 20px;
+        }
+
+        .leaderboard-table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+
+        .leaderboard-table th,
+        .leaderboard-table td {
+          padding: 10px;
+          border: 1px solid #00f7ff; /* Neon lines */
+          text-align: left;
+        }
+
+        .leaderboard-table th {
+          background-color: #222; /* Dark header background */
+        }
+
+        .leaderboard-table tr:nth-child(even) {
+          background-color: #181818; /* Alternating row colors */
         }
       `}</style>
     </div>
