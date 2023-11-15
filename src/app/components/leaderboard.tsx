@@ -47,7 +47,7 @@ const Leaderboard: React.FC = () => {
   return (
     <div className="leaderboard-outer-container">
       <div className="leaderboard-container">
-        <h2>Manifest Event Leaderboard</h2>
+        <h2>\mani-fest/ Leaderboard</h2>
         {error ? (
           <p>Error fetching data: {error}</p>
         ) : (
