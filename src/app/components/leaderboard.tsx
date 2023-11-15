@@ -61,7 +61,11 @@ const Leaderboard: React.FC = () => {
     <div className="leaderboard-outer-container">
       <div className="leaderboard-container">
         <div className="logo-container">
-          <img src="/manifest-logo.png" alt="Manifest Logo" className="logo" />
+          <img
+            src="assets/manifest-logo.png"
+            alt="Manifest Logo"
+            className="logo"
+          />
         </div>
         <h2>Manifest Event Leaderboard</h2>
         {error ? (
