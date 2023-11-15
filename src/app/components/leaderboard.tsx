@@ -45,43 +45,53 @@ const Leaderboard: React.FC = () => {
   }, []);
 
   return (
-    <div className="leaderboard-container">
-      <h2>\mani-fest/ Leaderboard</h2>
-      {error ? (
-        <p>Error fetching data: {error}</p>
-      ) : (
-        <table className="leaderboard-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>XP</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((item) => (
-              <tr key={item.userId}>
-                <td>{item.name}</td>
-                <td>{item.xp}</td>
+    <div className="leaderboard-outer-container">
+      <div className="leaderboard-container">
+        <h2>Manifest Event Leaderboard</h2>
+        {error ? (
+          <p>Error fetching data: {error}</p>
+        ) : (
+          <table className="leaderboard-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>XP</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+            </thead>
+            <tbody>
+              {data.map((item) => (
+                <tr key={item.userId}>
+                  <td>{item.name}</td>
+                  <td>{item.xp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
 
       <style jsx>{`
+        .leaderboard-outer-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          overflow: hidden;
+        }
+
         .leaderboard-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          transform: rotate(270deg);
+          transform-origin: top left;
+          position: relative;
+          top: 100vh;
+          width: 100vh;
+          height: 100vw;
           color: #00f7ff; /* Neon color */
           background-color: #111; /* Dark background */
           padding: 20px;
           border-radius: 10px;
           box-shadow: 0 0 10px #00f7ff; /* Neon glow effect */
-          transform: rotate(-90deg); /* Rotating the container */
-          transform-origin: left top;
-          width: 100vh; /* Adjusting the width after rotation */
-          height: 100vw; /* Adjusting the height after rotation */
         }
 
         h2 {
