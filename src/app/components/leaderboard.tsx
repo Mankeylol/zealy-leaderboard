@@ -47,7 +47,9 @@ const Leaderboard: React.FC = () => {
   return (
     <div className="leaderboard-outer-container">
       <div className="leaderboard-container">
-        <h2>\mani-fest/ Leaderboard</h2>
+        <img src="mani-fest logo.png" alt="" className="manifest-logo" />
+        <br />
+        <h2>Leaderboard</h2>
         {error ? (
           <p>Error fetching data: {error}</p>
         ) : (
@@ -121,6 +123,10 @@ const Leaderboard: React.FC = () => {
 
         .leaderboard-table tr:nth-child(even) {
           background-color: #181818; /* Alternating row colors */
+        }
+
+        .manifest-logo {
+          max-width: 320px;
         }
       `}</style>
     </div>
