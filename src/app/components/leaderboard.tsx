@@ -151,7 +151,7 @@ const Leaderboard: React.FC = () => {
         }
 
         .second-place {
-          background-color: silver;
+          background-color: silver !important;
           color: black;
         }
 
