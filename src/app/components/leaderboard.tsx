@@ -47,7 +47,7 @@ const Leaderboard: React.FC = () => {
   return (
     <div className="leaderboard-outer-container">
       <div className="leaderboard-container">
-        <img src="mani-fest logo.png" alt="" className="manifest-logo" />
+        <img src="assets/manifest-logo.png" alt="" className="manifest-logo" />
         <br />
         <h2>Leaderboard</h2>
         {error ? (
