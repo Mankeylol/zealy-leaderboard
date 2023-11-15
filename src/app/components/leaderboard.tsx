@@ -106,12 +106,14 @@ const Leaderboard: React.FC = () => {
         }
 
         h2 {
+          font-family: "Space Grotesk", sans-serif; /* Applying Space Grotesk to the title */
           text-align: center;
           font-size: 2em;
           margin-bottom: 20px;
         }
 
         .leaderboard-table {
+          font-family: "Inter", sans-serif;
           width: 100%;
           border-collapse: collapse;
         }
