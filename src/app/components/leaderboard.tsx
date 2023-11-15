@@ -45,22 +45,40 @@ const Leaderboard: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <h2 className="mb-4">Leaderboard</h2>
-      {error ? (
-        <p>Error fetching data: {error}</p>
-      ) : (
-        <ul className="flex flex-col">
-          {data.map((item) => (
-            <li key={item.userId} className="mb-2">
-              {item.name} - XP: {item.xp}
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className="center-container">
+      <div className="rotate-container">
+        <h2 className="mb-4">Leaderboard</h2>
+        {error ? (
+          <p>Error fetching data: {error}</p>
+        ) : (
+          <ul className="flex flex-col">
+            {data.map((item) => (
+              <li key={item.userId} className="mb-2">
+                {item.name} - XP: {item.xp}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <style jsx>{`
+        .center-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+
+        .rotate-container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          white-space: nowrap;
+          transform: rotate(-90deg);
+          transform-origin: left top;
+        }
+      `}</style>
     </div>
   );
 };
 
 export default Leaderboard;
-
