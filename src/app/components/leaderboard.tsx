@@ -67,7 +67,7 @@ const Leaderboard: React.FC = () => {
             className="logo"
           />
         </div>
-        <h2>Manifest Event Leaderboard</h2>
+        <h2>Leaderboard</h2>
         {error ? (
           <p>Error fetching data: {error}</p>
         ) : (
