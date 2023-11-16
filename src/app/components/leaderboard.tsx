@@ -91,6 +91,10 @@ const Leaderboard: React.FC = () => {
       </div>
 
       <style jsx>{`
+        body {
+          background-color: #111;
+        }
+
         .leaderboard-outer-container {
           position: absolute;
           top: 0;
@@ -111,7 +115,7 @@ const Leaderboard: React.FC = () => {
           background-color: #111; /* Dark background */
           padding: 20px;
           border-radius: 10px;
-          box-shadow: 0 0 10px #00f7ff; /* Neon glow effect */
+          // box-shadow: 0 0 10px #00f7ff; /* Neon glow effect */
           margin-top: -5vh;
           margin-left: 2vw;
           padding: 40px;
