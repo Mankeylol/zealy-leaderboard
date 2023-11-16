@@ -91,10 +91,6 @@ const Leaderboard: React.FC = () => {
       </div>
 
       <style jsx>{`
-        body {
-          background-color: #111 !important;
-        }
-
         .leaderboard-outer-container {
           position: absolute;
           top: 0;
