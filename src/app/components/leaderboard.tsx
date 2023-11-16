@@ -150,18 +150,21 @@ const Leaderboard: React.FC = () => {
         }
 
         .first-place {
-          background-color: gold;
-          color: black;
+          // background-color: gold;
+          // color: black;
+          color: gold;
         }
 
         .second-place {
-          background-color: silver !important;
-          color: black;
+          // background-color: silver !important;
+          // color: black;
+          color: silver;
         }
 
         .third-place {
-          background-color: #cd7f32; /* Bronze */
-          color: black;
+          // background-color: #cd7f32; /* Bronze */
+          // color: black;
+          color: #cd7f32;
         }
 
         .logo-container {
