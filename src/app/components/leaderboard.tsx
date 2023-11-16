@@ -92,7 +92,7 @@ const Leaderboard: React.FC = () => {
 
       <style jsx>{`
         body {
-          background-color: #111;
+          background-color: #111 !important;
         }
 
         .leaderboard-outer-container {
