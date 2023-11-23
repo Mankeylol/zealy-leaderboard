@@ -25,7 +25,7 @@ const Leaderboard: React.FC = () => {
     try {
       const response = await fetch("https://zealy-api.vercel.app/");
       const result = await response.json();
-      setData(result.leaderboard);
+      setData(result);
     } catch (error) {
       console.error("Error fetching data:", error);
       setError((error as Error).message || "An unknown error occurred.");
